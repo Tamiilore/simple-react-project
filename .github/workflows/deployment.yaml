@@ -4,7 +4,7 @@ on:
     branches:
       - 'main'
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -22,7 +22,7 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: npm test
-  build:
+  Build:
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +46,7 @@ jobs:
         with:
           name: dist-files
           path: dist
-  deploy:
+  Deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
